@@ -2,8 +2,8 @@
 
 ## Why do we need a better WordPress configuration solution?
 
-### 1. No standarized support for professional workflow, e.g. `test`/`stage`/`live`
-WordPress is a great CMS, but it ignores the needs of WordPress developers who would like to use a more professional workflow such as with Test/Stage/Production environments. The default WordPress configuration was designed to manage configuration for one environment; if you want to manage more you have to roll-your-own multi-environment configuration solution.
+### 1. No standarized support for professional workflow 
+WordPress is a great CMS, but it ignores the needs of WordPress developers who would like to use a more professional workflow such as with `test`/`stage`/`live` environments. The default WordPress configuration was designed to manage configuration for one environment; if you want to manage more you have to roll-your-own multi-environment configuration solution.
 
 ### 2. Limited locations where you can store configuration
 WordPress allows you to store configuration in `wp-config.php` in the web root, or one directory level above. Although you can store your configuration in another file and then `require()` it in `wp-config.php` _(which is what [**Better WP-Config**](#) does)_ hacking together a custom solution means you'll also need to document and maintain it, assuming you want to depend on it in the future. 
