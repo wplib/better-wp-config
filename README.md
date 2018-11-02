@@ -61,7 +61,7 @@ But the good news is, **Better WP-Config solves _(almost)_ all these problems!**
 - Optional support for:
   - Private/atlternate config location
   - Multi-tenancy
-  - [phpdotenv](/vlucas/phpdotenv) 
+  - [phpdotenv](https://github.com/vlucas/phpdotenv) 
   - Webhost-specfic configuration 
 - Usability
   - See all options and their values w/`wp_config()-print();`
