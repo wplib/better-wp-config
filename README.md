@@ -12,7 +12,7 @@ And if you do go to the trouble to develop and document a solution such as Bette
 
 ### 3. Managed host's configuration solutions are poorly designed and incompatible
 
-Adding insult to injury each WordPress managed host &mdash; such as [Pantheon](https://pantheon.io/) and [WPEngine](https://wpengine.com/) &mdash each roll their own arbitrarily-incompatible configuration solutions to support their own managed WordPress offering.
+Adding insult to injury each WordPress managed host &mdash; such as [Pantheon](https://pantheon.io/) and [WPEngine](https://wpengine.com/) &mdash; each roll their own arbitrarily-incompatible configuration solutions to support their own managed WordPress offering.
 
 Here is how various WordPress managed webhosts handle and/or limit you with `wp-config.php`. 
 
