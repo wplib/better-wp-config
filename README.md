@@ -10,7 +10,7 @@ WordPress allows you to store configuration in `wp-config.php` in the web root, 
 
 And if you do go to the trouble to develop and document a solution such as Better WP-Config you'll basically have invested time _(and money?)_ into duplicating that which you cpould have just used without any development and documentation effort.
 
-### 3. Managed WordPress Webhosts configuration solutions are poorly designed and incompatible
+### 3. Managed host's configuration solutions are poorly designed and incompatible
 
 Adding insult to injury each WordPress managed host &mdash; such as [Pantheon](https://pantheon.io/) and [WPEngine](https://wpengine.com/) &mdash each roll their own arbitrarily-incompatible configuration solutions to support their own managed WordPress offering.
 
@@ -21,7 +21,7 @@ Here is how various WordPress managed webhosts handle and/or limit you with `wp-
 
 If you are familiar with how other managed WordPress websites handle `wp-config.php` please consider submitting a pull request with documentation on how they handle their `wp-config.php` to help us and others.
 
-### 4. WordPress uses PHP's Inflexible Globally-scoped and Immutable Constants 
+### 4. PHP's Inflexible Globally-scoped and Immutable Constants 
 Anyone who has worked with WordPress knows about configuring WordPress' database credentials via the PHP constants `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASSWORD`. This seems simple and easy when you firstt start working with WordPress, but over time you realize that it makes configuration _very inflexible_ because you **cannot cascade configurations** from WordPress' defaults, your project's defaults, to your environment's specifics and finally to your web host's configuration.
 
 Better WPConfig does not eliminate the use of immutable constants but instead waits until all cascading configuration is merged before `define()`ing these constants.  _(But this could be a first step to eradicate the use of PHP's `define()`d constants from WordPress. It's a thought, because PHP's immutable constants makes automated testing of WordPress functionality much harder than it needs to be.)_
