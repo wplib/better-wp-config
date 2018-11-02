@@ -64,7 +64,7 @@ But the good news is, **Better WP-Config solves _(almost)_ all these problems!**
   - [phpdotenv](/vlucas/phpdotenv) 
   - Webhost-specfic configuration 
 - Usability
-  - See all options and their values w/`print_r( wp_config() );`
+  - See all options and their values w/`wp_config()-print();`
   
   
 ## Better WP-Config's Long Term Goals
