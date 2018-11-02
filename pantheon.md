@@ -8,4 +8,6 @@ Yes, Pantheon provides configuration in `$_ENV` variables _(I wish all WordPress
 
 And even if you do roll your own special `wp-config.php` it will almost certainly be incompatible with other web hosts that your future clients will almost certainly demand you use instead of Pantheon because, for example, they once read that [Gartner](https://www.gartner.com/) said a different managed WordPress host was the most secure _(3 years ago.)_ At least that has been our experience.
 
-But if you are running your WordPress websites on Pantheon don't despair; there is a better way! Use [**Better WP-Config**](/wplib/better-wp-config) instead!
+But if you are running your WordPress websites on Pantheon don't despair; there is a better way! 
+
+Use [**Better WP-Config**](https://github.com/wplib/better-wp-config/) instead!
