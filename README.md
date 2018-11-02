@@ -42,7 +42,7 @@ Lastly, the problems related to professional workflow and version control uses-c
 just makes deployment harder than it needs to be. This applies whether you are using SFTP upload, Git deployment such as Pantheon has, or deployment via a continuous integration provider like CircleCI.
 
 ### But there is a better way
-But the good news is, **Better WP-Config solves _(almost)_ all these problems!**  Read the next section for Better WP-Config's features.
+But the good news is, **Better WP-Config solves _(almost)_ all these problems!**  Read the next section to learn more.
 
 ## Better WP-Config's Features
 
