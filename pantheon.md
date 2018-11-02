@@ -11,3 +11,6 @@ And even if you do roll your own special `wp-config.php` it will almost certainl
 But if you are running your WordPress websites on Pantheon don't despair; there is a better way! 
 
 Use [**Better WP-Config**](https://github.com/wplib/better-wp-config/) instead!
+
+## Do you work for Pantheon?
+If you are from Pantheon, please [reach out to discuss](mailto:team@wplib.org) how we can collaborate to make Pantheon much better for your customers by incorporating and Better WP-Config into your WordPress hosting service and provide us feedback so we can make Better WP-Config support your service even better that we already do.
