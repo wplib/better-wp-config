@@ -1,6 +1,6 @@
 <?php
 
 return array(
-	'environment:domain' => 'stage.example.local',
+	'environment[domain]' => 'stage.example.local',
 );
 

@@ -1,6 +1,6 @@
 <?php
 
 return array(
-	'environment:domain' => 'www.example.com',
+	'environment[domain]' => 'www.example.com',
 );
 

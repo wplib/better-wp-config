@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @return WP_Config|WP_Bootstrap
+ * @return WP_Bootstrap|WP_Config
  */
 function wp_config() {
 	static $config, $bootstrapped = false;
@@ -11,6 +11,7 @@ function wp_config() {
 		}
 		if ( function_exists( 'add_filter' ) ) {
 			$config = new WP_Config( $config );
+			WP_Config::release_memory();
 			$bootstrapped = true;
 		}
 	}
@@ -49,13 +50,6 @@ class WP_Config {
 	 * @var string
 	 */
 	protected $_current_name;
-
-	/**
-	 * @param WP_Config|mixed $parent
-	 */
-	public function optimize() {
-		$this->_hooks = null;;
-	}
 
 	/**
 	 * @param WP_Config|mixed $parent
@@ -162,8 +156,9 @@ class WP_Config {
 
 			$parsed_properties = array();
 			foreach( $properties as $property_name => $value ) {
-				if ( false !== strpos( $property_name, ':' ) ) {
-					list( $parent_name, $sub_name ) = explode( ':', $property_name, 2 );
+				$property_name = rtrim( $property_name, ']' );
+				if ( false !== strpos( $property_name, '[' ) ) {
+					list( $parent_name, $sub_name ) = explode( '[', $property_name, 2 );
 					$parsed_properties[ $parent_name ][ $sub_name ] = $value;
 					unset( $properties[ $property_name ] );
 					continue;
@@ -222,6 +217,105 @@ class WP_Config {
 		}
 	}
 
+	/**
+	 */
+	public static function release_memory() {
+		self::$_hooks = null;
+	}
+
+	/**
+	 * Prints the configuration in .env format
+	 */
+	public function print_env() {
+		$this->_print( 'env' );
+	}
+
+	/**
+	 * Prints the configuration in .php format
+	 */
+	public function print_php() {
+		$this->_print( 'php' );
+	}
+
+	/**
+	 * Prints the configuration in .json format
+	 */
+	public function print_json() {
+		$this->_print( 'json' );
+	}
+
+	/**
+	 * Prints the configuration based on the
+	 * file_format found in wp-bootstrap.php.
+	 */
+	public function print_config() {
+		$this->_print( $this->file_format );
+	}
+
+	/**
+	 * @param string $file_format
+	 * @param null|object $object
+	 * @param null|string $parent_name
+	 * @return array
+	 */
+	private function _print( $file_format, $object = null, $parent_name = null ) {
+
+		if ( is_null( $object ) ) {
+			$object = $this;
+		}
+
+		$contained = is_object( $object->_contained )
+			? get_object_vars( $object->_contained )
+			: $object->_contained;
+		$options = array();
+		foreach( $contained as $name => $value ) {
+			$fullname = ! is_null( $parent_name )
+				? "{$parent_name}[{$name}]"
+				: $name;
+			if ( is_scalar( $value ) ) {
+				if ( is_bool( $value ) ) {
+					$value = $value ? 'true' : 'false';
+				} else if ( is_string( $value ) ) {
+					$value = "'{$value}'";
+				}
+				$options[ $fullname ] = $value;
+			} else {
+				$options = array_merge( $options, $this->_print( $file_format, (object) $value, $fullname ) );
+			}
+
+		}
+		if ( $this === $object ) {
+			foreach( $options as $name => $option ) {
+				switch( $file_format ) {
+					case 'env':
+						$options[ $name ] = "{$name}=" . str_replace( "'", '"', $option );
+						break;
+					case 'php':
+						$options[ $name ] = "\t'{$name}' => {$option},";
+						break;
+					case 'json':
+						$options[ $name ] = "\t'{$name}': {$option},";
+						break;
+				}
+			}
+			switch( $file_format ) {
+				case 'env':
+					echo implode( "\n", $options );
+					break;
+				case 'php':
+					echo "return array(\n";
+					echo implode( "\n", $options );
+					echo "\n);";
+					break;
+				case 'json':
+					echo "[\n";
+					echo rtrim( implode( "\n", $options ), ',' );
+					echo "\n]";
+					break;
+			}
+		}
+		return $options;
+	}
 }
 
 class WP_Config_Wrapper extends WP_Config {}
@@ -231,7 +325,7 @@ class WP_Config_Wrapper extends WP_Config {}
  */
 class WP_Bootstrap {
 
-	const PROJECT_CONFIG_PATH = '/wp-content/config/config.project.php';
+	const PROJECT_CONFIG_PATH = '/wp-content/config/config.php';
 
 	/**
 	 * @var string
@@ -241,7 +335,7 @@ class WP_Bootstrap {
 	/**
 	 * @var string
 	 */
-	public $format = 'php';
+	public $file_format = 'php';
 
 	/**
 	 * @var WP_Environment_Bootstrap
@@ -304,37 +398,37 @@ class WP_Bootstrap {
 	public function defaults() {
 		return array(
 			'defines'                    => array(),
-			'environment:scheme'         => 'https',
-			'environment:domain'         => 'www.example.com',
-			'disallow:unfiltered_html'   => false,
-			'disallow:file_edit'         => false,
-			'disallow:file_mods'         => false,
-			'allow:subdirectory_install' => false,
-			'allow:unfiltered_uploads'   => false,
-			'allow:auto_update_core'     => false,
-			'allow:auto_update_plugin'   => false,
-			'allow:auto_update_theme'    => false,
-			'debug:php'                  => false,
-			'debug:script'               => false,
-			'error:reporting'            => E_ALL,
-			'error:display'              => '0',
-			'error:display_startup'      => '0',
-			'db:name'                    => 'wordpress',
-			'db:user'                    => 'wordpress',
-			'db:pass'                    => 'wordpress',
-			'db:host'                    => 'localhost',
-			'db:charset'                 => 'utf8',
-			'db:collate'                 => '',
-			'db:table_prefix'            => 'wp_',
-			'salts:auth_key'             => 'default',
-			'salts:secure_auth_key'      => 'default',
-			'salts:logged_in_key'        => 'default',
-			'salts:nonce_key'            => 'default',
-			'salts:auth_salt'            => 'default',
-			'salts:secure_auth_salt'     => 'default',
-			'limit:memory'               => '64M',
-			'limit:max_memory'           => '64M',
-			'dir:root'                   => __DIR__,
+			'environment[scheme]'         => 'https',
+			'environment[domain]'         => 'www.example.com',
+			'disallow[unfiltered_html]'   => false,
+			'disallow[file_edit]'         => false,
+			'disallow[file_mods]'         => false,
+			'allow[subdirectory_install]' => false,
+			'allow[unfiltered_uploads]'   => false,
+			'allow[auto_update_core]'     => false,
+			'allow[auto_update_plugin]'   => false,
+			'allow[auto_update_theme]'    => false,
+			'debug[php]'                  => false,
+			'debug[script]'               => false,
+			'error[reporting]'            => E_ALL,
+			'error[display]'              => '0',
+			'error[display_startup]'      => '0',
+			'db[name]'                   => 'wordpress',
+			'db[user]'                    => 'wordpress',
+			'db[pass]'                    => 'wordpress',
+			'db[host]'                    => 'localhost',
+			'db[charset]'                 => 'utf8',
+			'db[collate]'                 => '',
+			'db[table_prefix]'            => 'wp_',
+			'salts[auth_key]'             => 'default',
+			'salts[secure_auth_key]'      => 'default',
+			'salts[logged_in_key]'        => 'default',
+			'salts[nonce_key]'            => 'default',
+			'salts[auth_salt]'            => 'default',
+			'salts[secure_auth_salt]'     => 'default',
+			'limit[memory]'               => '64M',
+			'limit[max_memory]'           => '64M',
+			'dir[root]'                   => __DIR__,
 		);
 	}
 
@@ -447,7 +541,7 @@ class WP_Bootstrap {
 		}
 
 		/**
-		 * Make sure 'dir:core' was set correctly.
+		 * Make sure 'dir[core]' was set correctly.
 		 */
 		if ( ! is_file( "{$this->dirs->core}/wp-blog-header.php" ) ) {
 			trigger_error( sprintf( 'The core directory [%s] not correctly set.', $this->dirs->core ) );
@@ -486,8 +580,8 @@ class WP_Bootstrap {
 
 		$bootstrap = (object) array_merge(
 			array(
-				'provider'     => 'provider',
-				'format'       => 'php',
+				'provider'     => null,
+				'file_format'  => 'php',
 				'environments' => array(),
 				'configs'      => array()
 			),
@@ -496,8 +590,21 @@ class WP_Bootstrap {
 
 		$this->provider = $this->_determine_provider( $bootstrap->provider );
 
-		if ( preg_match( '#^(php|dotenv)$#', $bootstrap->format, $match ) ) {
-			$this->format = $bootstrap->format;
+		if ( preg_match( '#^(php|env|json)$#', $bootstrap->file_format, $match ) ) {
+			$this->file_format = $bootstrap->file_format;
+			do {
+				if ( $autoloader_filepath = __DIR__ . '/vendor/autoload.php' ) {
+					require_once( $autoloader_filepath );
+				}
+
+				if ( class_exists( '\\Dotenv\\Dotenv' ) ) {
+					break;
+				}
+
+				trigger_error( '\\Dotenv\\Dotenv is required by wp-bootstrap.com but is not loaded.' );
+				die(1);
+
+			} while ( false );
 		}
 
 		if ( empty( $bootstrap->environments[ '.+' ] ) ) {
@@ -578,18 +685,18 @@ class WP_Bootstrap {
 
 		switch ( $config_type ) {
 			case 'project':
-				$config_filepath = "{$this->dirs->config}/config.php";
+				$config_filepath = "{$this->dirs->config}/config";
 				break;
 
 			case 'environment':
 				$config_filepath = $this->environment->name
-					? "{$this->dirs->config}/environments/{$this->environment->name}.php"
+					? "{$this->dirs->config}/environments/{$this->environment->name}"
 					: null;
 				break;
 
 			case 'provider':
 				$config_filepath = $this->provider
-					? "{$this->dirs->config}/providers/{$this->provider}.php"
+					? "{$this->dirs->config}/providers/{$this->provider}"
 					: null;
 				break;
 
@@ -603,11 +710,40 @@ class WP_Bootstrap {
 			if ( is_null( $config_filepath ) ) {
 				break;
 			}
+			$config_filepath = 'env' === $this->file_format
+				? preg_replace( '#^(.+)/config$#', '$1', $config_filepath ) . '/.env'
+				: $config_filepath . ".{$this->file_format}";
 			if ( ! is_file( $config_filepath ) ) {
 				break;
 			}
 
-			$merged              = array_merge( $config, (array) require( $config_filepath ) );
+			switch ( $this->file_format ) {
+				case 'php':
+					$loaded = (array) require( $config_filepath ) ;
+					break;
+
+				case 'env':
+					$dotenv = new Dotenv\Dotenv(
+						dirname( $config_filepath ),
+						basename( $config_filepath )
+					);
+					$dotenv->safeLoad();
+					$loaded = array();
+					foreach( $dotenv->getEnvironmentVariableNames() as $name ) {
+						$loaded[ $name ] = getenv( $name );
+					}
+					break;
+
+				case 'json':
+					if ( ! $json = file_get_contents( $config_filepath ) ) {
+						break 2;
+					}
+					if ( ! $loaded = json_decode( $json ) ) {
+						break 2;
+					}
+					break;
+			}
+			$merged              = array_merge( $config, (array) $loaded );
 			$merged[ 'defines' ] = array_merge( $config[ 'defines' ], $merged[ 'defines' ] );
 
 		} while ( false );
