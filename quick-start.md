@@ -78,7 +78,7 @@ return array(
 ```
  
 ## Step #5: Create your project's config.php file
-Next, create a `/wp-content/config/config.php` file and include any configuration options that are project wide but that differ from Better WP-Config's defaults _(you can see the defaults in the next section after this example.) You may need to refer to your saved `wp-config.save.php` here:_
+Next, create a `/wp-content/config/config.php` file and include any configuration options that are project wide but that differ from Better WP-Config's defaults _(you can see the defaults in the next section after this example.)_ You may need to refer to your saved `wp-config.save.php` here:
 
 
 ```
