@@ -1,7 +1,7 @@
 # Better WP-Config
 
 Want to get started using Better WP-Config _**ASAP**_?
-- Check out our [**Quick Start**](https://github.com/wplib/better-wp-config/blob/master/quickstart.md), or 
+- Check out our [**Quick Start**](https://github.com/wplib/better-wp-config/blob/master/quick-start.md), or 
 - Check our our more in-depth [**7 Step Tutorial**](https://github.com/wplib/better-wp-config/blob/master/tutorial.md).
 
 ## Why do we need a better WordPress configuration solution?
