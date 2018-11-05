@@ -160,7 +160,7 @@ public function defaults() {
 If any of the above options are sufficient for your project, you don't need to set them. You only need to set the ones that differ.
 
 ### Step #5: Create your project's config.php file
-Next, create a `/wp-content/config/config.php` file and include any configuration options that are project wide but differ from Better WP-Config's defaults, for example: 
+Next, create a `/wp-content/config/config.php` file and include any configuration options that are project wide but differ from Better WP-Config's defaults. You may need to refer to your saved `wp-config.save.php` here: 
 
 ```
 <?php
