@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * This is configured for use with the WPLib Box local development solution for WordPress.
+ *
+ * @see https://github.com/wplib/wplib-box
+ *
+ */
 return array(
 	'db[name]'    => $_ENV[ 'DB_NAME' ],
 	'db[user]'    => $_ENV[ 'DB_USER' ],
