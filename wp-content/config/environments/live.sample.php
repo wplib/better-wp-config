@@ -1,6 +1,11 @@
 <?php
 
 return array(
-	'environment[domain]' => 'www.example.com',
+	'environment[domain]'    => 'www.example.com',
+	'debug[php]'             => false,
+	'debug[script]'          => false,
+	'error[reporting]'       => E_ALL & ~E_DEPRECATED,
+	'error[display]'         => '0',
+	'error[display_startup]' => '0',
 );
 
