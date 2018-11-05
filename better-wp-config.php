@@ -361,51 +361,63 @@ class WP_Bootstrap {
 	 */
 	public function load_config() {
 
-		$this->paths = new WP_Paths_Bootstrap();
+		$this->paths         = new WP_Paths_Bootstrap();
 		$this->paths->config = $this->_load_bootstrap();
 
-		$this->dirs = new WP_Dirs_Bootstrap();
-		$this->dirs->root = __DIR__;
+		$this->dirs         = new WP_Dirs_Bootstrap();
+		$this->dirs->root   = __DIR__;
 		$this->dirs->config = __DIR__ . $this->paths->config;
 
 		/**
 		 * Load the default configuration for all projects using better-wp-config.php
 		 */
 		$config = $this->defaults();
-		if ( is_file( $config_filepath = "{$this->dirs->config}/config.php" ) ) {
-			/**
-			 * If exists, merge configuration for this project/site
-			 */
-			$config = array_merge( $config, (array) require( $config_filepath ) );
-		}
 
-		if ( $this->environment->name && is_file( $config_filepath = "{$this->dirs->config}/environments/{$this->environment->name}.php" ) ) {
-			/**
-			 * If exists, load this environment's config and merge default config to fill in defaults.
-			 */
-			$config = $this->_load_merge_config( $config_filepath, $config );
-		}
+		/**
+		 * Load and merge configuration for this project/site
+		 */
+		$config = $this->_load_merge_config( 'project', $config );
 
-		if ( $this->provider && is_file( $config_filepath = "{$this->dirs->config}/providers/{$this->provider}.php" ) ) {
-			/**
-			 * If exists, load this managed environment's config and merge default config to fill in defaults.
-			 */
-			$config = $this->_load_merge_config( $config_filepath, $config );
-		}
+		/**
+		 * Load and merge configuration for the current environment
+		 */
+		$config = $this->_load_merge_config( 'environment', $config );
 
+		/**
+		 * Load and merge configuration for the local dev/web host provider
+		 */
+		$config = $this->_load_merge_config( 'provider', $config );
+
+		/**
+		 * Assign final merged configuration to this properties array
+		 */
 		WP_Config::set_properties( $this, $config );
 
+		/**
+		 * Compose the paths whose defaults can be derived from other paths
+		 */
 		$this->paths->admin    = "{$this->paths->core}/wp-admin";
 		$this->paths->includes = "{$this->paths->core}/wp-includes";
 
-		$this->paths->private  = "{$this->paths->content}/private";
+		if ( is_null( $this->paths->private ) ) {
+			/**
+			 * To actually be private, this requires webhost support
+			 * or you will need to configure yourself. But we hope to
+			 * encourage a defacto-standard here. Help us by asking
+			 * your host to standardize on this.
+			 */
+			$this->paths->private = "{$this->paths->content}/private";
+		}
 
-		$this->dirs->core      = "{$this->dirs->root}{$this->paths->core}";
-		$this->dirs->content   = "{$this->dirs->root}{$this->paths->content}";
-		$this->dirs->vendor    = "{$this->dirs->root}{$this->paths->vendor}";
-		$this->dirs->private   = "{$this->dirs->root}{$this->paths->private}";
-		$this->dirs->admin     = "{$this->dirs->root}{$this->paths->admin}";
-		$this->dirs->includes  = "{$this->dirs->root}{$this->paths->includes}";
+		/**
+		 * Compose these dirs based on these paths
+		 */
+		$this->dirs->core     = "{$this->dirs->root}{$this->paths->core}";
+		$this->dirs->content  = "{$this->dirs->root}{$this->paths->content}";
+		$this->dirs->vendor   = "{$this->dirs->root}{$this->paths->vendor}";
+		$this->dirs->admin    = "{$this->dirs->root}{$this->paths->admin}";
+		$this->dirs->includes = "{$this->dirs->root}{$this->paths->includes}";
+		$this->dirs->private  = "{$this->dirs->root}{$this->paths->private}";
 
 		/**
 		 * Run configure() for each contained object that implements WP_Configurable
@@ -425,7 +437,7 @@ class WP_Bootstrap {
 
 
 		/**
-		 * Define any constants that were hardcoded
+		 * Define any constants that were hardcoded in the config files
 		 */
 		foreach ( $this->defines as $constant => $value ) {
 			if ( ! defined( $constant ) ) {
@@ -434,9 +446,13 @@ class WP_Bootstrap {
 			define( $constant, $value );
 		}
 
+		/**
+		 * Make sure 'dir:core' was set correctly.
+		 */
 		if ( ! is_file( "{$this->dirs->core}/wp-blog-header.php" ) ) {
 			trigger_error( sprintf( 'The core directory [%s] not correctly set.', $this->dirs->core ) );
 		}
+
 	}
 
 	/**
@@ -553,16 +569,51 @@ class WP_Bootstrap {
 	/**
 	 * Loads a configuration file and merged in passed in config for default values.
 	 *
-	 * @param string $filepath
+	 * @param string $config_type
 	 * @param array $config
 	 *
 	 * @return mixed
 	 */
-	private function _load_merge_config( $filepath, $config ) {
-		$merged = array_merge( $config, (array) require( $filepath ) );
-		$merged[ 'defines' ] = array_merge( $config[ 'defines' ], $merged[ 'defines' ] );
+	private function _load_merge_config( $config_type, $config ) {
+
+		switch ( $config_type ) {
+			case 'project':
+				$config_filepath = "{$this->dirs->config}/config.php";
+				break;
+
+			case 'environment':
+				$config_filepath = $this->environment->name
+					? "{$this->dirs->config}/environments/{$this->environment->name}.php"
+					: null;
+				break;
+
+			case 'provider':
+				$config_filepath = $this->provider
+					? "{$this->dirs->config}/providers/{$this->provider}.php"
+					: null;
+				break;
+
+			default:
+				$config_filepath = null;
+		}
+		do {
+
+			$merged = $config;
+
+			if ( is_null( $config_filepath ) ) {
+				break;
+			}
+			if ( ! is_file( $config_filepath ) ) {
+				break;
+			}
+
+			$merged              = array_merge( $config, (array) require( $config_filepath ) );
+			$merged[ 'defines' ] = array_merge( $config[ 'defines' ], $merged[ 'defines' ] );
+
+		} while ( false );
 
 		return $merged;
+
 	}
 
 }
@@ -688,6 +739,7 @@ class WP_Paths_Bootstrap {
 	public $private;
 
 }
+
 /**
  * Class WP_Config_Dirs
  */
