@@ -1,0 +1,15 @@
+{
+    "name": "wplib/better-wp-config",
+    "description": "A Better Approach for WordPress Configuration",
+    "type": "library",
+    "require": {
+        "vlucas/phpdotenv": "^2.5"
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mike Schinkel",
+            "email": "mike@newclarity.net"
+        }
+    ]
+}
