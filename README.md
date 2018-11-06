@@ -44,7 +44,7 @@ Want to get started using Better WP-Config _**ASAP**_?
 
 _(Note: The following will not be true until we complete [this issue](https://github.com/wplib/better-wp-config/issues/7). Until then, see our [quick start](https://github.com/wplib/better-wp-config/blob/master/quick-start.md))_
 
-Just create a file named `/wp-content/config/config.php` and add your site's configuration using the format in this example:
+Just create a file named `/wp-content/config/config.php` and add your site's configuration using the format here:
 
 ```
 <?php
