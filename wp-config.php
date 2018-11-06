@@ -9,8 +9,6 @@
  *
  */
 
-if ( ! class_exists( 'WP_Config', false ) ) {
-	require( __DIR__ . '/better-wp-config.php' );
-}
+require_once( __DIR__ . '/better-wp-config.php' );
 
 require_once( wp_config()->dirs->core . '/wp-settings.php' );

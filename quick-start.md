@@ -41,7 +41,6 @@ Now replace your `/wp-config.php` with the following code, making sure that you 
 
 ```
 <?php
-
 /**
  * This is the standard wp-config for when using Better WP-Config.
  *
@@ -50,11 +49,7 @@ Now replace your `/wp-config.php` with the following code, making sure that you 
  * @see https://github.com/wplib/better-wp-config
  *
  */
-
-if ( ! class_exists( 'WP_Config', false ) ) {
-	require( __DIR__ . '/better-wp-config.php' );
-}
-
+require_once( __DIR__ . '/better-wp-config.php' );
 require_once( wp_config()->dirs->core . '/wp-settings.php' );
 ```
 
@@ -112,6 +107,7 @@ public function defaults() {
 		'defines'                    => array(),
 		'environment[scheme]'         => 'https',
 		'environment[domain]'         => 'www.example.com',
+		'environment[platform]'       => 'wordpress',
 		'disallow[unfiltered_html]'   => false,
 		'disallow[file_edit]'         => false,
 		'disallow[file_mods]'         => false,
