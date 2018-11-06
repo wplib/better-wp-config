@@ -1,0 +1,643 @@
+<html>
+<head>
+    <title>Better WP-Config Discussions: 2018-11-05</title>
+</head>
+<body>
+<h1>Better WP-Config Discussions: 2018-11-05</h1>
+<div class="c-virtual_list__scroll_container" role="presentation" style="position: relative; height: 11352.2px;">
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 244.094px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541423991002900" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:19 AM</span></a></div>
+                <span class="c-message__body">Hi Mike, I do generally like better wp config, actually very aligned with the "scifi" way I was thinking of, I do have some minor problems with the locations of the files which I assume are easily solvable, but the biggest thing that stopped me when I was thinking about array based configuration is backward compatibility.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 344.094px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541424108004500" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:21 AM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">so much WP documentation instructs you to add that one define in wp-config.php, and most people can do that even if they are not very technical without creating some PHP error.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 450.094px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541424265006200" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:24 AM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">The focus of my concerns are the project files as the others will most likely be edited by developers and they should know enough to either not break things or be able to recover from breakage. But project is more tricky</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 556.094px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541424345007500" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:25 AM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">Now I looked better at the code and I see that there might be several configuration formats. At the very least one of them should be default, and IMHO for "project it should be the .env format</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 662.094px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541424556008600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:29 AM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">Maybe it would be a good idea to just stop people from modifying the files direct and instead provide some admin page for that.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 768.094px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541424716010700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">8:31 AM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">Something else that popped into my mind, how would the GIT flow be with such configuration? You are going to want the DB credentials in GIT if your deployment plan is based on git pull, but for shared hosting you can not know them in development time.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 874.094px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541450119038900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">3:35 PM</span></a></div>
+                <span class="c-message__body">Thanks for coming to provide feedback.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span><blockquote class="c-mrkdwn__quote"><span class="copy_only">&gt;</span> <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"I do have some minor problems with the locations of the files which I assume are easily solvable"</i></blockquote><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>That is fully configurable in <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-bootstrap.php</code>. &nbsp;<wbr>Just specify a different directory for the config. &nbsp;<wbr>The structure <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">inside</i> that directory is currently fixed, but Better WP-Config (<code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code>) is a proof-of-concept at the moment and open for feedback and potential improvement from others. &nbsp;<wbr>I had to decide a bunch of things which were arbitrary and we could easily select different approaches for those arbitrary choices.</span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 1112.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541450127039300" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">3:35 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body"><blockquote class="c-mrkdwn__quote"><span class="copy_only">&gt;</span> <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"IMHO for "project it should be the .env format"</i></blockquote><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>First argument for <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> being the default is that <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code> can work with <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> format without anything else being installed. &nbsp;<wbr>It requires <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">phpdotenv</code> to be installed with Composer to use <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code>, so that right there is one reason for <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> being the default. &nbsp;<wbr>Ultimately we could roll-our-own <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> support and eliminate the dependency but 1.) I think people wanting to use <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> will likely be more advanced and thus be Composer users, and 2.) read on as to why I am skeptical about <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> actually being a better solution than <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code>.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>Ironically the <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> format has limitations compared with the currently default <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> format. &nbsp;<wbr>Take are look at this Pantheon configuration file and consider how you would do this in <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code>?<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>- <a role="link" target="_blank" class="" href="https://slack-redir.net/link?url=https%3A%2F%2Fgithub.com%2Fwplib%2Fbetter-wp-config%2Fblob%2Fmaster%2Fwp-content%2Fconfig%2Fproviders%2Fpantheon.php" rel="noopener noreferrer" tabindex="-1">https://github.com/wplib/better-wp-config/blob/master/wp-content/config/providers/pantheon.php</a><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>That Pantheon <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"provider"</i> in the link above basically duplicates what they Pantheon has as their defaults:<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>- <a role="link" target="_blank" class="" href="https://slack-redir.net/link?url=https%3A%2F%2Fgithub.com%2Fpantheon-systems%2FWordPress%2Fblob%2Fdefault%2Fwp-config.php" rel="noopener noreferrer" tabindex="-1">https://github.com/pantheon-systems/WordPress/blob/default/wp-config.php</a><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>So as I work with <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code> and web hosts like Pantheon that already use <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">$_ENV</code> for DB credentials the <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> format seems to be redundant and thus solving a non-problem except on local development <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(and maybe shared hosting?)</i>, but VLucas says <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(<b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">emphasis</b> mine):</i><span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 1546.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541450134039600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">3:35 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body"><blockquote class="c-mrkdwn__quote"><span class="copy_only">&gt;</span> <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"<code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">phpdotenv</code> is made for development environments, and generally <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">should not be used in production</b>. </i></blockquote><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>- From <a role="link" target="_blank" class="" href="https://slack-redir.net/link?url=https%3A%2F%2Fgithub.com%2Fvlucas%2Fphpdotenv%23usage-notes" rel="noopener noreferrer" tabindex="-1">https://github.com/vlucas/phpdotenv#usage-notes</a><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>And on local development you would use non-secrets for DB so no problem in committing those to version control.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>And even if you did need to use secrets like API keys the problem is the same if you are using <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> or <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code>.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>Maybe we need to add a <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">config-secrets.php</code> loaded after the environment but before the host which you always <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.gitignore</code> and never commit to version control?<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>So I'm questioning if the growing consensus that we should all move to <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> files for WordPress-ish <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(X-Press?)</i> implementations considers all the ramifications of said use? &nbsp;<wbr>At this point I am thinking if people are given the choice of using <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">and</b> <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> they will fall back to the <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> because AFAICT it makes necessary things possible that you can't <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(easily?)</i> do with <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code>. So &nbsp;<wbr>I am coming to believe it has been a collective <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"Seemed like a good idea at the time"</i> that people will move on from when given the actual option of using it for X-Press sites.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>But I am more than willing to be proven wrong on this, if I am in fact missing something.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>I think that what needs to happen is numerous people need to try to use it, both as <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.env</code> and as <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">.php</code> before we can make a final decision on which is the preferred default.<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2040.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541450158040300" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">3:35 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body"><blockquote class="c-mrkdwn__quote"><span class="copy_only">&gt;</span> <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">"Maybe it would be a good idea to just stop people from modifying the files direct and instead provide some admin page for that."</i></blockquote><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>One of my focuses in my WordPress work is to get as much as possible into code that can be version controlled instead of in the X-Press database. &nbsp;<wbr>So if an admin page means putting stuff in the DB, I think that is going the wrong direction.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>OTOH, WPLib Box/(GearBox) <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">will</b> have admin pages for this kind of thing, and those admin pages will store in files that can be version controlled.</span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2234.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541450161040500" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">3:36 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body"><blockquote class="c-mrkdwn__quote"><span class="copy_only">&gt;</span> _"Something else that popped into my mind, how would the GIT flow be with such configuration? You are going to want the DB credentials in GIT if your deployment plan is based on git pull, but for shared hosting you can not know them in development time."</blockquote><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>I don't use GitFlow proper so I am unsure of exactly what you are thinking. <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(We use our own custom developed Git workflow since we found GitFlow did not work for us.)</i><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>Each named environment <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">could</b> have it's own config file that would get merged in and override the project config file. &nbsp;<wbr>You would not need to commit that environment configuration file until you are ready to deploy, at which case I assume you'd have to know the credentials, and/or the credentials would come from server-based <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">$_ENV</code> files, in which case it would be a non-issue. Right?</span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" role="listitem" style="top: 2428.09px;" tabindex="-1">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452617048000" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:16 PM</span></a></div>
+                <span class="c-message__body">The problem .env solves is separation between configuration and code. I am sure that this is not the only way to solve it, but it does send a message IMHO of **this file should not have any code in it**. This is for the project file which user with little technical background are more likely to have to change. The side benefit is that if you get the syntax wrong you are more likely to be able to get a meaningful error message. The big drawback is that the .env file is much more likely to be exposed to the web, so maybe .php is the only way <span class="emoji-outer emoji-sizer" data-codepoints="1f61e" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 3.92157%; background-size: 5200% 5200%;">:disappointed:</span>. Maybe if the format that will be there by default is one of a simple array it will discourage abuse, but than you lose backward compatibility. Oh well, one step at a time. Right now I am not sure what is best, just that the current situation is not great <span class="emoji-outer emoji-sizer" data-codepoints="1f609" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 58.8235% 64.7059%; background-size: 5200% 5200%;">:wink:</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2580.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452820053000" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:20 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">What "wordpress" lacks is a way to add code which executes before wp-settings.php is run. This influences the config discussion because right now it is the only obvious place to add such code which will not be removed in an upgrade is wp-config.php. Maybe if people would be encourage to use some other file, it will solve my concerns <span class="emoji-outer emoji-sizer" data-codepoints="1f642" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 74.5098%; background-size: 5200% 5200%;">:slightly_smiling_face:</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2686.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452883055400" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:21 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">and in "git flow" I just mean git based deployment, nothing more complex than that</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2792.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452921056300" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:22 PM</span></a></div>
+                <span class="c-message__body">I can see the separation between config and code can have value. &nbsp;<wbr>OTOH, I have seen too many use-cases where simply having configuration with no code doesn't meet those use-cases. &nbsp;<wbr><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>The main thing what I came up with does it provide cascading configuration so you have defaults at every level, something that <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">define()</code>d constants stop dead in the tracks. &nbsp;<wbr>And I tried to make the format a non-issue by making that configurable. &nbsp;<wbr>We could even make is to people could add their own format options, if they really wanted to.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 2952.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452967057100" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:22 PM</span></a></div>
+                <span class="c-message__body">yeh, define is just bad</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3052.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541452991057700" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:23 PM</span></a></div>
+                <span class="c-message__body">Funny, I asked on Trac for a place to run code early on, about 5-6 years ago, and Nacin nipped it in the bud so it went nowhere.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3152.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453015058300" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:23 PM</span></a></div>
+                <span class="c-message__body">surprise surprise <span class="emoji-outer emoji-sizer" data-codepoints="1f642" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 74.5098%; background-size: 5200% 5200%;">:slightly_smiling_face:</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3252.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453025058600" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:23 PM</span></a></div>
+                <span class="c-message__body">Yeah. :-(</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3352.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453078060300" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:24 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">We could easily add a place in BWPC to run early code. &nbsp;<wbr>One of my goals is to get something that can address all the different use-cases that force people to "customize" <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-config.php</code> so that deployments are easier.<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3458.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453081060500" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:24 PM</span></a></div>
+                <span class="c-message__body">you can hack it in wpdb.php, but it is an ugly hack</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3558.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453110061100" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:25 PM</span></a></div>
+                <span class="c-message__body">Ah, yes, Git deployment. &nbsp;<wbr>We definitely do that!</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3658.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453258066100" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:27 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">You know how the W3C does not want to "standardize" anything without actual code that has been running in the wild to prove the concept? &nbsp;<wbr>Similarly I wanted to get something usable so people could try it and give feedback for what is needed in hopes that we could collectively find "what works," and then make it happen.</span>
+                <div class="c-reaction_bar" role="group" aria-label="Reactions">
+                    <button class="c-button-unstyled c-reaction" type="button" aria-label="React with +1" delay="300"><span class="emoji-outer emoji-sizer" data-codepoints="1f44d" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 27.451% 96.0784%; background-size: 5200% 5200%;">:+1:</span><span class="c-reaction__count">1</span></button>
+                    <button class="c-button-unstyled c-reaction_add" type="button" aria-label="Add reaction..." data-qa="add_reaction_button" delay="300">
+                        <div class="c-reaction_add__container"><i class="c-icon c-reaction_add__icon c-reaction_add__icon--bg c-icon--small-reaction-bg" type="small-reaction-bg" aria-hidden="true"></i><i class="c-icon c-reaction_add__icon c-reaction_add__icon--fg c-icon--small-reaction" type="small-reaction" aria-hidden="true"></i></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3765.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453345067400" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:29 PM</span></a></div>
+                <span class="c-message__body">As for doing it as part of BWPC, I would be against, mainly because I am a strong believer in code that handles a simple well defined tasks. Once you try to do two tasks as part of one code, at best you get a less maintainable code with inter-dependencies. The question of early code is something that will need to get a buy in from classicpress (or anybody else) regardless of the adoption of BWPC</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3865.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453505070200" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:31 PM</span></a></div>
+                <span class="c-message__body">Like I said, I wanted to create a PoC that addressed all the issues that I have come across, and then hopefully get others to help "firm it up" so that it can actually solve the real world problems that all of us experience in this area.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 3965.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453601071600" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:33 PM</span></a></div>
+                <span class="c-message__body">I just suggest to separate them at least on the conceptual level. Early execution is needed even with the "old" wp-config.php</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4065.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453620072100" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:33 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">the PoC can bundle both</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4171.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453660072900" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:34 PM</span></a></div>
+                <span class="c-message__body">Sure. &nbsp;<wbr>I have no strong opinion on how early execution is implemented.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4271.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453695074000" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:34 PM</span></a></div>
+                <span class="c-message__body">I guess the only challenge is where to place the file</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4371.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453718075100" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:35 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">sounds like you had an idea where it should be <span class="emoji-outer emoji-sizer" data-codepoints="1f642" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 74.5098%; background-size: 5200% 5200%;">:slightly_smiling_face:</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4477.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453734075700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:35 PM</span></a></div>
+                <span class="c-message__body">Well, I do have <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">one</b> opinion. Ideally I would like something that would work with WordPress w/o having to modify core. Which is why I suggested that <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code> could handle it since if it is used then it will be running before <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-settings.php</code>.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4577.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453759076500" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:35 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">That was long ago. &nbsp;<wbr>I don't even know if my prior opinion was valid! &nbsp;<wbr>I am constantly learning.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4683.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453770076900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:36 PM</span></a></div>
+                <span class="c-message__body">+100</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4783.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453822077700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:37 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">Seems like wp-content is the natural place for such a file<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4889.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453845078200" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:37 PM</span></a></div>
+                <span class="c-message__body">Yeah</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 4989.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453918079200" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:38 PM</span></a></div>
+                <span class="c-message__body">One thing I do not understand right now, didn't you want to move the inclusion of wp-settings.php into load.php (or whatever is that file's name)</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5089.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541453971080900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:39 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">If so, what should be the order of execution?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5195.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454031082700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:40 PM</span></a></div>
+                <span class="c-message__body">Yes, but I realized that was orthogonal to what configuration needed. &nbsp;<wbr>I'd love to see Calm and Classic doing that, but I doubt WordPress will move anytime soon.<span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>I don't think the order changes. &nbsp;<wbr>It's literally move the call to <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-settings.php</code> from end of <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-config.php</code> to the end of <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-load.php</code>. &nbsp;<wbr>It's that simple.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5355.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454081083300" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:41 PM</span></a></div>
+                <span class="c-message__body">WordPress....</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5455.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454136084200" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:42 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">sigh. Isn't it the core reason of this discussion, that we all dis-pared from it moving anywhere <span class="emoji-outer emoji-sizer" data-codepoints="1f61e" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 3.92157%; background-size: 5200% 5200%;">:disappointed:</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5561.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454205085500" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:43 PM</span></a></div>
+                <span class="c-message__body">Lol. yeah. &nbsp;<wbr>But in this case after building the PoC I came to think that here it is not actually a problem.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5661.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454256085900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:44 PM</span></a></div>
+                <span class="c-message__body">because it is just a change in wp-config?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5761.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454288086700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:44 PM</span></a></div>
+                <span class="c-message__body">Yeah, just <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-config.php</code> and <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">index.php</code>.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5861.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454380090000" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:46 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">BTW, one of the things I was trying to do was not have to change <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">index.php</code> on deployment because I use a different directory layout locally for Composer and then have to deploy to WPEngine and Pantheon to the standard layouts.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 5967.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454398090400" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:46 PM</span></a></div>
+                <span class="c-message__body">From my POV, the whole reason for doing calm is that things can be solved in the right way. Too many plugins have more or less success in hacking something that works, but when you decide to fork, you can just do things the right way</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6067.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454427090800" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:47 PM</span></a></div>
+                <span class="c-message__body">Absolutely, otherwise, why the effort?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6167.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454484093100" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:48 PM</span></a></div>
+                <span class="c-message__body">exactly, so the early code file, from structural POV belong to load.php and for calm there is no reason to have it in any other place</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6267.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454493093400" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:48 PM</span></a></div>
+                <span class="c-message__body">I'd be interested to figure out how the "right way" would be different from what I did in <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code>, and then if there are ways for me to support the right way instead or in addition to.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6367.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454537094600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:48 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">What about <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">index.php</code>? &nbsp;<wbr>Will you change it?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6473.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454556095600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:49 PM</span></a></div>
+                <span class="c-message__body">I don't remember what is there. Let me &nbsp;<wbr>look</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6573.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454615097300" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:50 PM</span></a></div>
+                <span class="c-message__body">The problem I have found with bootstrapping is no knowing where <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">core</code> or <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">content</code> is located. &nbsp;<wbr>If I can get those two bits of information, then I can bootstrap. That's where I started when I started working on <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">BWPC</code>.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6673.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454672097900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:51 PM</span></a></div>
+                <span class="c-message__body">oh ok, so it basically indicates that you handle a front end request. Probably bad concept, but we have to support it</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6773.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454705098800" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:51 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">oh I see</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6879.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541454769099900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:52 PM</span></a></div>
+                <span class="c-message__body">Yeah. The problem is WordPress designed itself with core in the web root. &nbsp;<wbr>Had WP designed itself so that core was <i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true"><b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">always</b></i> in a known subdir then a lot of these problems would not exist.<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 6979.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455078100900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">4:57 PM</span></a></div>
+                <span class="c-message__body">ok, I do not remember, how does changing index.php helps here?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 7079.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455212102900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:00 PM</span></a></div>
+                <span class="c-message__body">If I load config in <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">index.php</code> I can know effectively what <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">ABSPATH</code> is and where to load <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-blog-header.php</code> from w/o having to have the build process potentially modify index.php during a pre-deploy build process.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 7179.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455301105300" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:01 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">IF <b data-stringify-prefix="*" data-stringify-suffix="*" data-stringify-requires-siblings="true">managed</b> WordPress companies allowed us to change their layouts -- companies like WPEngine -- then this would mostly be a non-issue. &nbsp;<wbr>But we need a Composer-friendly layout for local development and a standard layout at managed hosts.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 7285.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455302105400" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:01 PM</span></a></div>
+                <span class="c-message__body">seems like <a role="link" target="_blank" class="" href="https://slack-redir.net/link?url=https%3A%2F%2Fpremium.wpmudev.org%2Fblog%2Fchange-wordpress-file-directory-structure%2F" rel="noopener noreferrer" tabindex="-1">https://premium.wpmudev.org/blog/change-wordpress-file-directory-structure/</a> also want to modify index.php</span>
+                <div class="c-message__attachments">
+                    <div class="c-message_attachment">
+                        <div class="c-message_attachment__border"></div>
+                        <div class="c-message_attachment__body">
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__author"><span class="c-message_attachment__part"><img class="c-message_attachment__author_icon" alt="WPMU DEV Blog" src="https://slack-imgs.com/?c=1&amp;o1=wi32.he32.si&amp;url=https%3A%2F%2Fpremium.wpmudev.org%2Ffavicon32.png" width="16" height="16"><span class="c-message_attachment__author_name">WPMU DEV Blog</span></span></span></div>
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__title"><a class="c-message_attachment__title_link" href="https://premium.wpmudev.org/blog/change-wordpress-file-directory-structure/" target="_blank" rel="noreferrer noopener" tabindex="-1"><span>How to Change Your WordPress File and Directory Structure</span></a></span></div>
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__text"><span>Thanks to the open source nature of WordPress, anyone – including hackers – can look up the typical file structure of a WordPress website and know exactly where to start an attack. Fortunately, rearranging your core WordPress file structure is one method you can employ from your security arsenal to combat hacks and bolster your site’s defenses. So in this post, I’m going to walk you through two ways you can customize your file structure for single and Multisite installs, as well as show you the code you need to bring it all together.</span></span><span class="c-message_attachment__media_trigger">(31 kB)<button title="collapse" class="c-expandable_trigger" data-qa-expandable-trigger-is-expanded="true" data-qa-expandable-trigger-key="img_msg_1541455302.1054001" tabindex="-1"><i class="c-deprecated-icon c-icon--caret-down c-deprecated-icon--inherit" type="caret_down" aria-hidden="true"></i></button></span>
+                            </div>
+                            <div class="c-message_attachment__row">
+                                <div data-expanded="true" data-qa-expandable-container-is-expanded="true" data-qa-expandable-container-key="img_msg_1541455302.1054001"><a role="link" target="_blank" class="c-message_attachment__image" title="How to Change Your WordPress File and Directory Structure" data-qa="attachment_image" href="https://slack-redir.net/link?url=https%3A%2F%2Fpremium.wpmudev.org%2Fblog%2Fwp-content%2Fuploads%2F2016%2F05%2Ftuneup-large.png" rel="noopener noreferrer" tabindex="-1" style="width: 360px; height: 180px; background-image: url(&quot;https://slack-imgs.com/?c=1&amp;o1=wi720.he360.si.ro&amp;url=https%3A%2F%2Fpremium.wpmudev.org%2Fblog%2Fwp-content%2Fuploads%2F2016%2F05%2Ftuneup-large.png&quot;);">https://premium.wpmudev.org/blog/wp-content/uploads/2016/05/tuneup-large.png</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 8630.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455408107400" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:03 PM</span></a></div>
+                <span class="c-message__body">Yep. &nbsp;<wbr>That is the type of thing I wanted to make configurable rather than require code changes.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 8730.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455526108900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:05 PM</span></a></div>
+                <span class="c-message__body">ok, I will need to sleep on it. I usually worked with the canonical directory structure</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 8830.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455580110100" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:06 PM</span></a></div>
+                <span class="c-message__body">I have struggled using Composer to manage WordPress core with the canonical directory structure.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 8930.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455621110900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:07 PM</span></a></div>
+                <span class="c-message__body">sure, just impossible, but from this you can guess how much experience I have with composer <span class="emoji-outer emoji-sizer" data-codepoints="1f642" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 74.5098%; background-size: 5200% 5200%;">:slightly_smiling_face:</span><span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9030.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455634111200" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:07 PM</span></a></div>
+                <span class="c-message__body">:-D</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9130.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455657111700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:07 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">I hate Composer. &nbsp;<wbr>But currently, there is nothing better.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9236.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455676112000" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:07 PM</span></a></div>
+                <span class="c-message__body">I just hate dependencies <span class="emoji-outer emoji-sizer" data-codepoints="1f642" delay="300" style="background-image: url(&quot;https://a.slack-edge.com/c00d19/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png&quot;); background-position: 60.7843% 74.5098%; background-size: 5200% 5200%;">:slightly_smiling_face:</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9336.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455721112800" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:08 PM</span></a></div>
+                <span class="c-message__body">I share the sentiment, but am a pragmatist for client projects.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9436.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455777113600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:09 PM</span></a></div>
+                <span class="c-message__body">the thing about wp-config, is that it is loaded from admin.php IIRC</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9536.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455822114500" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:10 PM</span></a></div>
+                <span class="c-message__body">"Also" loaded by admin.php. &nbsp;<wbr>What concerns are you addressing here?</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9636.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455826114700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:10 PM</span></a></div>
+                <span class="c-message__body">I am wrong, it loads load.php</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9736.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455847115400" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:10 PM</span></a></div>
+                <span class="c-message__body">Ah yes. &nbsp;<wbr>It loads <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-config.php</code> indirectly.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9836.09px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455851115600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:10 PM</span></a></div>
+                <span class="c-message__body">just that need to keep that execution path in mind</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 9936.09px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455920115900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:12 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">and load defines ABSPATH</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10042.1px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541455985117600" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:13 PM</span></a></div>
+                <span class="c-message__body">Yeah. &nbsp;<wbr>See how I had to guard against loading twice: &nbsp;<wbr><a role="link" target="_blank" class="" href="https://slack-redir.net/link?url=https%3A%2F%2Fgithub.com%2Fwplib%2Fbetter-wp-config%2Fblob%2Fmaster%2Fwp-config.php%23L12" rel="noopener noreferrer" tabindex="-1">https://github.com/wplib/better-wp-config/blob/master/wp-config.php#L12</a><span class="c-mrkdwn__br"><i class="copy_only"><br></i></span>But I guess I could use <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">require_once()</code> instead. &nbsp;<wbr><i data-stringify-prefix="_" data-stringify-suffix="_" data-stringify-requires-siblings="true">(I just always try to avoid that.)</i></span>
+                <div class="c-message__attachments">
+                    <div class="c-message_attachment">
+                        <button class="c-button-unstyled c-message_attachment__delete" type="button" tabindex="-1"><i class="c-deprecated-icon c-icon--times-small" type="times_small" aria-hidden="true"></i></button>
+                        <div class="c-message_attachment__border"></div>
+                        <div class="c-message_attachment__body">
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__author"><span class="c-message_attachment__part"><img class="c-message_attachment__author_icon" alt="GitHub" src="https://slack-imgs.com/?c=1&amp;o1=wi32.he32.si&amp;url=https%3A%2F%2Fa.slack-edge.com%2Fbfaba%2Fimg%2Funfurl_icons%2Fgithub.png" width="16" height="16"><span class="c-message_attachment__author_name">GitHub</span></span></span></div>
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__title"><a class="c-message_attachment__title_link" href="https://github.com/wplib/better-wp-config/blob/master/wp-config.php#L12" target="_blank" rel="noreferrer noopener" tabindex="-1"><span>wplib/better-wp-config</span></a></span></div>
+                            <div class="c-message_attachment__row"><span class="c-message_attachment__text"><span>Proposal for a pragmatic approach to configuration for WordPress you can use today. - wplib/better-wp-config</span></span></div>
+                        </div>
+                        <span class="c-message_attachment__thumb" title="wplib/better-wp-config" style="background-image: url(&quot;https://slack-imgs.com/?c=1&amp;o1=wi160.he160.si&amp;url=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F3367340%3Fs%3D400%26v%3D4&quot;);"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10574.1px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name" tabindex="-1">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456175119700" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:16 PM</span></a></div>
+                <span class="c-message__body">ok, I do not see right now any hope of deriving any other directory structure base on where the essential files are located. Maybe this is something that can be solved with early.php file. Just need to define well how it can communicate the directory structure<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10674.1px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name" tabindex="-1">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456304122900" delay="300" tabindex="-1"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:18 PM</span></a></div>
+                <span class="c-message__body">The approach I took to communicate the directory structure was to allow <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-bootstrap</code> identify a configuration file, which could be located in a directory wherever you want, and then I defined the structure in a combination of the values from the config and some hardcoded relative directories, e.g. <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-includes</code> and <code class="c-mrkdwn__code" data-stringify-prefix="`" data-stringify-suffix="`" data-stringify-requires-siblings="true">wp-admins</code>.<span class="c-message__edited_label" delay="300">&nbsp;(edited)</span></span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10774.1px;">
+        <div class="c-message c-message--light c-message--adjacent" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456334123700" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:18 PM</span></a></div>
+            <div class="c-message__content" data-qa="message_content"><span class="c-message__body">That is just one way we could do it. &nbsp;<wbr>As I said I had to make arbitrary choices to make something work.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10880.1px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456421125100" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:20 PM</span></a></div>
+                <span class="c-message__body">ok, the discussion starts to fly over my head, it is past midnight here. I will try to take a look again tomorrow and make sense of the changes done to index.php</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 10980.1px;">
+        <div class="c-message c-message--light" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456444125700" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:20 PM</span></a></div>
+                <span class="c-message__body">Thanks! Talk later.</span></div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 11080.1px;">
+        <div class="c-message c-message--light c-message--hover" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-UDVNZ936F-gc56dbf5408a-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/UDVNZ936F" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="UDVNZ936F" data-qa="message_sender_name">Mark Kaplun</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541456457126000" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">5:20 PM</span></a></div>
+                <span class="c-message__body">later</span></div>
+            <div class="c-message_actions__container c-message__actions" role="group" aria-label="Message actions">
+                <button class="c-button-unstyled c-message_actions__button" type="button" aria-haspopup="true" aria-label="Add reaction" data-qa="add_reaction_action" delay="60"><i class="c-icon c-icon--small-reaction" type="small-reaction" aria-hidden="true"></i></button>
+                <button class="c-button-unstyled c-message_actions__button" type="button" aria-label="Start a thread" data-qa="start_thread" delay="60"><i class="c-icon c-icon--small-reply" type="small-reply" aria-hidden="true"></i></button>
+                <button class="c-button-unstyled c-message_actions__button" type="button" aria-haspopup="true" aria-label="Share message …" data-qa="share_message" delay="60"><i class="c-icon c-icon--share-action" type="share-action" aria-hidden="true"></i></button>
+                <button class="c-button-unstyled c-message_actions__button" type="button" aria-haspopup="true" aria-label="Star message" data-qa="star_message" delay="60"><i class="c-icon c-icon--small-star" type="small-star" aria-hidden="true"></i></button>
+                <button class="c-button-unstyled c-message_actions__button" type="button" aria-haspopup="true" aria-label="More actions" data-qa="more_message_actions" delay="60"><i class="c-icon c-icon--small-ellipsis" type="small-ellipsis" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="c-virtual_list__item" tabindex="-1" role="listitem" style="top: 11236.2px;">
+        <div class="c-message c-message--light c-message--last" role="document" data-qa="message_container">
+            <div class="c-message__gutter"><a href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" class="c-message__avatar c-avatar c-avatar--interactive" tabindex="-1" aria-hidden="true" style="height: 36px; line-height: 36px; width: 36px;"><img class="c-avatar__image" src="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-48" srcset="https://ca.slack-edge.com/T0D3S1B7X-U0D3TN3KJ-gc988a2da603-72 2x" alt=""></a></div>
+            <div class="c-message__content" data-qa="message_content">
+                <div class="c-message__content_header"><span class="c-message__sender" data-qa="message_sender"><a class="c-message__sender_link" href="/team/U0D3TN3KJ" target="_blank" rel="noopener noreferrer" data-stringify-suffix=" " data-message-sender="U0D3TN3KJ" data-qa="message_sender_name">mike</a></span><a class="c-timestamp c-timestamp--static" href="https://wplib.slack.com/archives/DDWTHMGH5/p1541481731126200" delay="300"><span class="c-timestamp__label" data-stringify-prefix="[" data-stringify-suffix="]">12:22 AM</span></a></div>
+                <span class="c-message__body">See <a role="link" tabindex="0" target="/archives/CDXJZGUEB" class="c-mrkdwn__channel internal_channel_link" data-channel-name="#wp-config" data-channel-id="CDXJZGUEB" data-qa="channel_link" href="/archives/CDXJZGUEB">#wp-config</a></span></div>
+        </div>
+    </div>
+</div>
