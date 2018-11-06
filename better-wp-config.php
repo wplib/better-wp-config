@@ -792,6 +792,11 @@ class WP_Environment_Bootstrap implements WP_Configurable {
 	public $site_url;
 
 	/**
+	 * @var string
+	 */
+	public $platform;
+
+	/**
 	 * Select this environment given array of hostname-matching regexes and associate names.
 	 *
 	 * @example /wp-bootstrap.php file contents:
