@@ -44,21 +44,21 @@ Want to get started using Better WP-Config _**ASAP**_?
 
 _(Note: The following will not be true until we complete [this issue](https://github.com/wplib/better-wp-config/issues/7). Until then, see our [quick start](https://github.com/wplib/better-wp-config/blob/master/quick-start.md))_
 
-Just create a file named `/wp-content/config/config.php` and add your site's configuration using the format here:
+1. Just create a file named `/wp-content/config/config.php` and add your site's configuration using the format here:
 
-```
-<?php
-return array(
-    'db[name]'         => 'example_db',
-    'db[user]'         => 'example_user',
-    'db[pass]'         => '1234567890abcdef',
-    'db[charset]'      => 'utf8mb4_unicode_ci',
-    'db[collate]'      => 'utf8mb4',
-    'db[host]'         => 'localhost',
-    'db[table_prefix]' => 'wp_',
-);
-```
-You will also need to replace your site's  `/index.php` and `/wp-config.php` with *very* simple alternatives that you can find [here](https://github.com/wplib/better-wp-config/blob/master/index.php) and [here](https://github.com/wplib/better-wp-config/blob/master/wp-config.php), respectively.
+    ```
+    <?php
+    return array(
+        'db[name]'         => 'example_db',
+        'db[user]'         => 'example_user',
+        'db[pass]'         => '1234567890abcdef',
+        'db[charset]'      => 'utf8mb4_unicode_ci',
+        'db[collate]'      => 'utf8mb4',
+        'db[host]'         => 'localhost',
+        'db[table_prefix]' => 'wp_',
+    );
+    ```
+2. You will **also** need to replace your site's  `/index.php` and `/wp-config.php` with *very* simple alternatives that you can find [here](https://github.com/wplib/better-wp-config/blob/master/index.php) and [here](https://github.com/wplib/better-wp-config/blob/master/wp-config.php), respectively.
 
 ### And that is all it takes! 
 
