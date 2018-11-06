@@ -56,6 +56,9 @@ _(Note: The following will not be true until we complete [this issue](https://gi
         'db[collate]'      => 'utf8mb4',
         'db[host]'         => 'localhost',
         'db[table_prefix]' => 'wp_',
+        'defines'          => array(
+            'CONSTANT_REQUIRED_BY_A_PLUGIN' => 'it's value'
+        ),
     );
     ```
 2. You will **also** need to replace your site's  `/index.php` and `/wp-config.php` with *very* simple alternatives that you can find [here](https://github.com/wplib/better-wp-config/blob/master/index.php) and [here](https://github.com/wplib/better-wp-config/blob/master/wp-config.php), respectively.
