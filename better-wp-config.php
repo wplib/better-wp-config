@@ -409,7 +409,7 @@ class WP_Bootstrap {
 			'allow[auto_update_core]'     => false,
 			'allow[auto_update_plugin]'   => false,
 			'allow[auto_update_theme]'    => false,
-			'debug[php]'                  => false,
+			'debug[wp]'                   => false,
 			'debug[script]'               => false,
 			'error[reporting]'            => E_ALL,
 			'error[display]'              => '0',
@@ -1057,7 +1057,7 @@ class WP_Debug_Bootstrap implements WP_Configurable {
 	/**
 	 * @var string WP_DEBUG setting
 	 */
-	public $php = false;
+	public $wp = false;
 
 	/**
 	 * @var string SCRIPT_DEBUG setting
@@ -1068,7 +1068,7 @@ class WP_Debug_Bootstrap implements WP_Configurable {
 	 * @param WP_Bootstrap $wp_config
 	 */
 	public function configure( $wp_config ) {
-		define( 'WP_DEBUG',     $this->php );
+		define( 'WP_DEBUG',     $this->wp );
 		define( 'SCRIPT_DEBUG', $this->script );
 	}
 }

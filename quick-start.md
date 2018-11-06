@@ -67,7 +67,7 @@ Next, create a `/wp-content/config/config.php` file and include any configuratio
 return array(
 	'disallow[file_edit]'         => true,
 	'disallow[file_mods]'         => true,
-	'debug[php]'                  => true,
+	'debug[wp]'                   => true,
 	'debug[script]'               => true,
 	'error[display]'              => '1',
 	'error[display_startup]'      => '1',
@@ -102,7 +102,7 @@ public function defaults() {
 		'allow[auto_update_core]'     => false,
 		'allow[auto_update_plugin]'   => false,
 		'allow[auto_update_theme]'    => false,
-		'debug[php]'                  => false,
+		'debug[wp]'                   => false,
 		'debug[script]'               => false,
 		'error[reporting]'            => E_ALL,
 		'error[display]'              => '0',
@@ -157,7 +157,7 @@ return array(
 return array(
 	'environment[domain]'    => 'stage.example.local',
 	'db[pass]'               => '0987654321fedcba',
-	'debug[php]'             => false,
+	'debug[wp]'              => false,
 	'debug[script]'          => false,
 	'error[display]'         => '0',
 	'error[display_startup]' => '0',
@@ -170,7 +170,7 @@ return array(
 return array(
 	'environment[domain]'    => 'www.example.com ',
 	'db[pass]'               => '0987654321fedcba',
-	'debug[php]'             => false,
+	'debug[wp]'              => false,
 	'debug[script]'          => false,
 	'error[display]'         => '0',
 	'error[display_startup]' => '0',
