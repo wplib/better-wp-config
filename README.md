@@ -4,6 +4,37 @@ Want to get started using Better WP-Config _**ASAP**_?
 - Check out our [**Quick Start**](https://github.com/wplib/better-wp-config/blob/master/quick-start.md), or 
 - Check our our more in-depth [**7 Step Tutorial**](https://github.com/wplib/better-wp-config/blob/master/tutorial.md).
 
+## Better WP-Config's Features
+
+- **Directory-layout agnostic**
+  - Store config files in **ANY** directory, parent or subdir
+  - Use the `private` directories of managed web hosts to store config 
+  - Set `ABSPATH` _(e.g. WP core)_ to web root, `/wp` or any other subdir
+  - Set `WP_CONTENT_DIR` to `/wp-content`, `/app` or any other subdir
+- **Cascading configurations**
+  - Better WP-Config defaults
+  - Platform defaults that overrides Better WP-Config defaults 
+  - Project defaults that overides Platform defaults, etc.
+  - Environment defaults that overrides Project defaults, etc.
+  - Secrets that overrides Environment defaults, etc.
+  - Webhost configuration that override Secrets, etc.
+- **Multi-environment config support**
+  - Map named environments to `HTTP_HOST` domains
+  - Define unlimited environments _(Local/Test/Stage/Production/etc)_
+  - Version-control config for all environments _(except `secrets`)_
+  - Deploy with no build changes needed to `index.php` or `wp-config.php`
+- **Optional Secrets Handling**
+  - Exclude from version-controlled config
+  - Load from `$_ENV`, `$_SERVER` or `getenv()`
+- **Optional support for:**
+  - Private/alternate config location
+  - Multi-tenancy
+  - [phpdotenv](https://github.com/vlucas/phpdotenv) 
+  - Webhost-specfic configuration 
+- **Discoverability**
+  - See all options and their values w/`wp_config()->print_config();`
+  
+  
 ## Why do we need a better WordPress configuration solution?
 
 ### 1. No standarized support for professional workflow 
@@ -31,7 +62,7 @@ Anyone who has worked with WordPress knows about configuring WordPress' database
 Better WPConfig does not eliminate the use of immutable constants but instead waits until all cascading configuration is merged before `define()`ing these constants.  _(But this could be a first step to eradicate the use of PHP's `define()`d constants from WordPress. It's a thought, because PHP's immutable constants makes automated testing of WordPress functionality much harder than it needs to be.)_
 
 ### 5. Discovery of configuration options
-Unfortunately there is no simple way to find all the options available to WordPress core since they are implied throughout WordPress' codebase and various documented locations onlines.  _Better WP-Config_ _(mostly)_ solves this problem with `wp_config()->print()`, analogous to `phpinfo()`
+Unfortunately there is no simple way to find all the options available to WordPress core since they are implied throughout WordPress' codebase and various documented locations onlines.  _Better WP-Config_ _(mostly)_ solves this problem with `"wp_config()->print_config()`, analogous to `phpinfo()`
 
 ### 6. Configuration options have no defaults
 A lot of configuration options have no defaults, such as a the database configuration which adds to learning required for local development.  _Better WP-Config_ provides default options for all _"known"_ options. 
@@ -48,29 +79,6 @@ just makes deployment harder than it needs to be. This applies whether you are u
 ### But there is a better way
 But the good news is, **Better WP-Config solves _(almost)_ all these problems!**  Read the next section to learn more.
 
-## Better WP-Config's Features
-
-- Multi-environment config support
-  - Map named environments to HTTP_HOST domains
-  - Define unlimited environments _(Local/Test/Stage/Production/etc)_
-  - Version-control config for all environments
-- Cascading configurations
-  - Better wp-config's defaults
-  - Project defaults
-  - Environment configuration
-  - Webhost configuration
-- Optional Secrets Handling
-  - Exclude from version-controlled config
-  - Load from `$_ENV`, `$_SERVER` or `getenv()`
-- Optional support for:
-  - Private/atlternate config location
-  - Multi-tenancy
-  - [phpdotenv](https://github.com/vlucas/phpdotenv) 
-  - Webhost-specfic configuration 
-- Usability
-  - See all options and their values w/`wp_config()-print();`
-  
-  
 ## Better WP-Config's Long Term Goals
 We are really happy with how well **Better WP-Config**. However, things could be:
 
