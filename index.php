@@ -16,9 +16,7 @@
  */
 define('WP_USE_THEMES', true);
 
-/**
- * This loads configuration using Better WP Config
- */
+/* Loads the Better WP-Config bootstrapper */
 require( __DIR__ . '/better-wp-config.php' );
 
 /** This loads the WordPress Environment and Template */

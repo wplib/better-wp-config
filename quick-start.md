@@ -7,30 +7,20 @@ If you want to learn more about the _"**why**"_ of each of these steps, checkout
 Copy [`better-wp-config.php`](https://github.com/wplib/better-wp-config/blob/master/better-wp-config.php) to your web site's root directory, the same directory where your root `/index.php` is located.
 
 ## Step #2: Update your root /index.php file
-Update your root `/index.php` to look exactly like the following _(you can [_**copy it directly**_](https://raw.githubusercontent.com/wplib/better-wp-config/master/index.php) from the GitHub raw page if you like):_
+Change these two (2) lines in WordPress' root `/index.php`:
 
 ```
-<?php
-/**
- * Front to the ClassicPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells ClassicPress to load the theme.
- *
- * @package ClassicPress
- */
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+```
 
-/**
- * Tells ClassicPress to load the ClassicPress theme and output it.
- *
- * @var bool
- */
-define('WP_USE_THEMES', true);
+To look like this four (4) lines instead:
 
-/**
- * Load Better WP Config configuration
- */
+```
+/* Loads the Better WP-Config bootstrapper */
 require( __DIR__ . '/better-wp-config.php' );
 
-/** Loads the ClassicPress Environment and Template */
+/** Loads the WordPress Environment and Template */
 require( wp_config()->dirs->core . '/wp-blog-header.php' );
 ```
 
@@ -41,13 +31,9 @@ Now replace your `/wp-config.php` with the following code, making sure that you 
 
 ```
 <?php
-/**
- * This is the standard wp-config for when using Better WP-Config.
- *
- * Nothing more is needed.
- *
- * @see https://github.com/wplib/better-wp-config
- *
+/** 
+ * Config by Better WP-Config
+ * @see: https://github.com/wplib/better-wp-config 
  */
 require_once( __DIR__ . '/better-wp-config.php' );
 require_once( wp_config()->dirs->core . '/wp-settings.php' );

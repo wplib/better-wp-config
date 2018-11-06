@@ -20,14 +20,14 @@ Update your root `/index.php` to look exactly like the following _(you can [_**c
 ```
 <?php
 /**
- * Front to the ClassicPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells ClassicPress to load the theme.
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
  *
- * @package ClassicPress
+ * @package WordPress
  */
 
 /**
- * Tells ClassicPress to load the ClassicPress theme and output it.
+ * Tells WordPress to load the WordPress theme and output it.
  *
  * @var bool
  */
@@ -38,7 +38,7 @@ define('WP_USE_THEMES', true);
  */
 require( __DIR__ . '/better-wp-config.php' );
 
-/** Loads the ClassicPress Environment and Template */
+/** Loads the WordPress Environment and Template */
 require( wp_config()->dirs->core . '/wp-blog-header.php' );
 ```
 
@@ -62,14 +62,7 @@ Now replace your `/wp-config.php` with the following code, making sure that you 
 
 ```
 <?php
-/**
- * This is the standard wp-config for when using Better WP-Config.
- *
- * Nothing more is needed.
- *
- * @see https://github.com/wplib/better-wp-config
- *
- */
+/* Config by Better WP-Config: https://github.com/wplib/better-wp-config */
 require_once( __DIR__ . '/better-wp-config.php' );
 require_once( wp_config()->dirs->core . '/wp-settings.php' );
 ```
